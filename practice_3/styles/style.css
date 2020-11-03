@@ -1,0 +1,27 @@
+img	{
+    box-shadow: 0 0 0 1px #ccc,
+    0 -20px 5px -5px #8B0000,
+    20px 0 5px -5px #32CD32,
+    0 20px 5px -5px #008080,
+    -20px 0 5px -5px #FFA500;
+}
+img:hover {
+    box-shadow: 0 0 0 1px #ccc,
+    0 -20px 5px -5px #FFA500,
+    20px 0 5px -5px #8B0000,
+    0 20px 5px -5px #32CD32,
+    -20px 0 5px -5px #008080;
+    transition: all 0.5s ease;
+}
+
+.colorized {
+    background-color: red;
+    box-shadow: 0 0 5px 2px;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    width: 250px;
+    height: auto;
+    padding: 30px;
+}
+/* выше представлены стили для задачи 2 */

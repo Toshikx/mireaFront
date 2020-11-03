@@ -1,0 +1,18 @@
+h1{
+    color: #f1f100;
+    font-size: 115%;
+    text-align: center;
+    background-color: #000fff;
+}
+h2{
+    color: indianred;
+    font-size: 250%;
+    text-align: left;
+    background-color: navy;
+}
+p {
+    color: orchid;
+    font-size: 1em;
+    text-align: right;
+    background-color: mediumturquoise;
+}

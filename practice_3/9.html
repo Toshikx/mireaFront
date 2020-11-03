@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Заголовок</title>
+		<style>
+			input:checked+strong
+			{
+				background: yellow;
+				padding: 4px;
+			}
+			#sub
+			{
+				position: fixed;
+				top: 75px;
+				left: 80px;
+			}
+		</style>
+	</head>
+	<body>
+		<form>
+			<p><input type="checkbox" name="HTML" value="HTML"><strong> HTML</strong></p>
+			<p><input type="checkbox" name="CSS" value="CSS" checked><strong> CSS</strong></p>
+			<p><input type="checkbox" name="JS" value="JS" checked><strong> JS</strong></p>
+			<p><input type="checkbox" name="U" value="U"><strong> U</strong></p>
+			<p><input id="sub" type="submit" value="Отправить"></p>
+		</form>
+	</body>
+</html>

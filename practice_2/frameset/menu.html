@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>menu</title>
+    <script>
+        function is1() {
+            window.open("mainPage.html", 'CONTENT')
+        }
+        function is2() {
+            window.open("content/2.html", 'mainFrame')
+        }
+        function is3() {
+            window.open("http://vm-2.mozello.com/novosti/params/post/2227392/matematicheskij-analiz-2-semestr", 'mainFrame')
+        }
+        function is4() {
+            window.open("content/12.html", 'mainFrame')
+        }
+        function is5() {
+            window.open("11.html", 'mainFrame')
+        }
+    </script>
+</head>
+<body>
+		<menu label="Файл">
+			<button type="button" onclick="is1()">Главная</button>
+			<button type="button" onclick="is2()">Мемы</button>
+			<!--<button type="button" onclick="is3()">Математика</button>-->
+			<button type="button" onclick="is4()">Отдых</button>
+			<button type="button" onclick="is5()" target =" mainFrame">Работа</button>
+		</menu>
+</body>
+</html>

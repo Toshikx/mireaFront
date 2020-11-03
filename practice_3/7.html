@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Заголовок</title>
+		<script>
+				window.onload = function(){
+					var r = new Image();
+					r.src = "media/r.png";
+					r.width = 8;
+					r.height = 8;
+					var g = new Image();
+					g.src = "media/g.png";
+					g.width = 8;
+					g.height = 8;
+					var name = document.getElementById("nam");
+					name.addEventListener('input', function (event) {
+						if (name.validity.patternMismatch || name.value.length == 0) {
+							document.getElementById("n_img").src = r.src;
+						} else {
+							document.getElementById("n_img").src = g.src;
+						}
+					});
+					var age = document.getElementById("age");
+					age.addEventListener('input', function (event) {
+						if (age.validity.patternMismatch || age.value.length == 0) {
+							document.getElementById("a_img").src = r.src;
+						} else {
+							document.getElementById("a_img").src = g.src;
+						}
+					});
+					var bool = document.getElementById("bool");
+					bool.addEventListener('input', function (event) {
+						if (bool.validity.patternMismatch || bool.value.length == 0) {
+							document.getElementById("b_img").src = r.src;
+						} else {
+							document.getElementById("b_img").src = g.src;
+						}
+					});
+					var hours = document.getElementById("hours");
+					hours.addEventListener('input', function (event) {
+						if (hours.validity.patternMismatch || hours.value.length == 0) {
+							document.getElementById("h_img").src = r.src;
+						} else {
+							document.getElementById("h_img").src = g.src;
+						}
+					});
+				}
+			</script>
+	</head>
+	<body>
+		<form>
+			<p><SUP><img src="media/r.png" id="n_img" width="8" height="8"></SUP><label for="nam">Имя пользователя</label>
+			<input id="nam" name="nam" required pattern="^[а-яА-ЯёЁ]+$"></p>
+			<p><SUP><img src="media/r.png" id="a_img" width="8" height="8"></SUP><label for="age">Сколько вам лет?</label>
+			<input type="number" id="age" required></p>
+			<p><SUP><img src="media/r.png" id="b_img" width="8" height="8"></SUP><label for="bool">Вы учитесь или работаете?</label>
+			<input id="bool" required pattern="^[а-яА-ЯёЁ]+$"></p>
+			<p><SUP><img src="media/r.png" id="h_img" width="8" height="8"></SUP><label for="hours">Сколько у вас свободного времени(в часах)</label>
+			<input type="number" id="hours" required pattern="[0-9]"></p>
+			<p><label for="free">Что вы обычно делаете в свободное время?</label>
+			<input id="free"></p>
+			<p><button>Отправить</button></p>
+		</form>
+	</body>
+</html>

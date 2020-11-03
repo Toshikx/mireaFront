@@ -1,0 +1,30 @@
+.hehe {
+position: fixed;
+width:200px;
+left:20px;
+margin:10px;
+padding:10px;
+border:4 px solid black;
+background: #00FF00FF;
+}
+.hohoh{
+position: fixed;
+left: 175px;
+top:150px;
+width:400px;
+margin:10px;
+padding:10px;
+border: 3px solid black;
+background: #AA0AF1;
+}
+.hoho{
+position:fixed;
+left:350px;
+top:240px;
+width: 350px;
+margin:10px;
+padding:10px;
+border: 2px solid black;
+background: #AAAAAA;
+}
+
