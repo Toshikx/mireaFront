@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .hello {
+        display: block;
+        justify-content: space-between;
+        margin: 0;
+        padding-bottom: 10px;
+      }
+      .hello:before {
+        content: "\2018";
+      }
+      .hello:after {
+        content: "\2019";
+      }
+      .once-bottom {
+        display: block;
+        margin-left: 20px;
+      }
+      .once-bottom:before,
+      .once-bottom:after {
+        content: "\201A";
+      }
+      .left-twice {
+        display: block;
+        margin-top: 10px;
+        margin-left: 30px;
+      }
+      .left-twice:before {
+        content: "\201C";
+      }
+      .left-twice:after {
+        content: "\201D";
+      }
+      .bottom-twice {
+        display: block;
+        margin-left: 40px;
+        margin-top: 10px;
+      }
+      .bottom-twice:before,
+      .bottom-twice:after {
+        content: "\201E";
+      }
+      .left-right {
+        display: block;
+        padding-top: 10px;
+        margin-left: 50px;
+      }
+      .left-right:before {
+        content: "\201C";
+      }
+      .left-right:after {
+        content: "\201D";
+      }
+      span {
+        font-size: 16pt;
+      }
+    </style>
+  </head>
+  <body>
+    <span class="hello">Левая одиночная и правая одиночная кавычки</span>
+    <br />
+    <span class="once-bottom">Нижняя одиночная кавычка</span>
+    <br />
+    <span class="left-twice">Левая и правая двойные кавычки</span>
+    <br />
+    <span class="bottom-twice">Нижняя двойная кавычка</span>
+    <br />
+    <span class="left-right">Левая и правая двойные угловые кавычки</span>
+  </body>
+</html>
