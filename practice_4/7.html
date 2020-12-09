@@ -1,67 +1,217 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+      button {
+        border: none;
+        border-radius: 15px;
+        text-align: center;
+        font-size: 15px;
+        position: absolute;
+        transition: 0.4s;
+        background: whitesmoke;
+      }
+      button:hover {
+        transition: 0.4s;
+        color: #000000;
+        background: #cccccc;
+      }
+      #one {
+        margin-left: 10px;
+        margin-top: 5px;
+      }
 
-<HTML>
+      #two {
+        margin-left: 250px;
+        margin-top: 5px;
+      }
 
-<head>
+      td {
+        padding-top: 5px;
+        width: 120px;
+      }
+      td:hover {
+        width: 116px;
+        border: 2px solid #808080;
+      }
 
-<title>Практическая 4 задание 6</title>
+      .today {
+        font-size: 20px;
+        padding: 0;
+        color: black;
+      }
 
-<link rel="stylesheet" href="style10.css">
+      .okt {
+        font-size: 15px;
+        color: #808080;
+      }
 
-</head>
+      .first img {
+        margin-top: 5px;
+        width: 70px;
+        height: 50px;
+      }
 
-<body>
+      .second img {
+        margin-top: 5px;
+        width: 70px;
+        height: 50px;
+      }
 
-<table>
+      .third img {
+        margin-top: 5px;
+        width: 50px;
+        height: 50px;
+      }
 
-<tr>
+      .fourth img {
+        margin-top: 5px;
+        width: 50px;
+        height: 50px;
+      }
 
-<td><table class="all"><tr><td><img src="C:\Users\u-f-c\Desktop\web\firstdaytoday.png"></td></tr>
+      .fifth img {
+        margin-top: 5px;
+        width: 70px;
+        height: 50px;
+      }
 
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\firstdayweather.png"></td></tr>
+      .fifth {
+        color: gray;
+      }
 
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\firstdayelse.png"></td></tr></table></td>
+      .sixth img {
+        margin-top: 5px;
+        width: 70px;
+        height: 50px;
+      }
 
-<td ><table class="all"><tr><td><img src="C:\Users\u-f-c\Desktop\web\seconddaytoday.png"></td></tr>
+      .sixth {
+        color: gray;
+      }
 
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\seconddayweather.png"></td></tr>
+      .seventh img {
+        margin-top: 5px;
+        width: 50px;
+        height: 50px;
+      }
 
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\seconddayelse.png"></td></tr></table></td>
+      .eighth img {
+        margin-top: 5px;
+        width: 70px;
+        height: 50px;
+      }
 
-<td ><table class="all"><tr><td><img src="C:\Users\u-f-c\Desktop\web\seconddaytoday.png"></td></tr>
+      .day {
+        font-size: 20px;
+        margin-top: 20px;
+        color: black;
+      }
 
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\thirddayweather.png"></td></tr>
-
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\firstdayelse.png"></td></tr></table></td>
-
-<td><table class="all"><tr><td><img src="C:\Users\u-f-c\Desktop\web\firstdaytoday.png"></td></tr>
-
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\seconddayweather.png"></td></tr>
-
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\thirddayelse.png"></td></tr></table></td>
-
-<td><table class="all"><tr><td><img src="C:\Users\u-f-c\Desktop\web\seconddaytoday.png"></td></tr>
-
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\firstdayweather.png"></td></tr>
-
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\thirddayelse.png"></td></tr></table></td>
-
-<td ><table class="all"><tr><td><img src="C:\Users\u-f-c\Desktop\web\thirddaytoday.png"></td></tr>
-
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\seconddayweather.png"></td></tr>
-
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\firstdayelse.png"></td></tr></table></td>
-
-<td ><table class="all"><tr><td><img src="C:\Users\u-f-c\Desktop\web\seconddaytoday.png"></td></tr>
-
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\thirddayweather.png"></td></tr>
-
-<tr><td><img src="C:\Users\u-f-c\Desktop\web\firstdayelse.png"></td></tr></table></td>
-
-</tr>
-
-</table>
-
-</body>
-
-</HTML>
+      .night {
+        font-size: 15px;
+        color: black;
+      }
+      .how {
+        margin-top: 10px;
+        font-size: 15px;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <span style="font-size: 25px; font-family: sans-serif"
+      ><b>Прогноз на 10 дней</b></span
+    >
+    <button id="one">Подробный прогноз на 10 дней</button>
+    <button id="two">На месяц</button>
+    <div>
+      <table class="weather">
+        <tr>
+          <td>
+            <div class="first">
+              <div class="today">Сегодня</div>
+              <div class="okt">1 октября</div>
+              <img src="img/1.png" alt="" />
+              <div class="day"><b>днём +17&deg;</b></div>
+              <div class="night">ночью +9&deg;</div>
+              <div class="how">Облачно с<br />прояснениями</div>
+            </div>
+          </td>
+          <td>
+            <div class="second">
+              <div class="today">Ср</div>
+              <div class="okt">2 октября</div>
+              <img src="img/1.png" alt="" />
+              <div class="day"><b>+19&deg;</b></div>
+              <div class="night">+11&deg;</div>
+              <div class="how">Облачно с<br />прояснениями</div>
+            </div>
+          </td>
+          <td>
+            <div class="third">
+              <div class="today">Чт</div>
+              <div class="okt">1 ноября</div>
+              <img src="img/3.png" alt="" />
+              <div class="day"><b>+20&deg;</b></div>
+              <div class="night">+10&deg;</div>
+              <div class="how">Малооблачно<br /><br /></div>
+            </div>
+          </td>
+          <td>
+            <div class="fourth">
+              <div class="today">Пт</div>
+              <div class="okt">2 ноября</div>
+              <img src="img/3.png" alt="" />
+              <div class="day"><b>+20&deg;</b></div>
+              <div class="night">+10&deg;</div>
+              <div class="how">Малооблачно<br /><br /></div>
+            </div>
+          </td>
+          <td>
+            <div class="fifth">
+              <div class="today">Сб</div>
+              <div class="okt">3 ноября</div>
+              <img src="img/1.png" alt="" />
+              <div class="day"><b>+19&deg;</b></div>
+              <div class="night">+9&deg;</div>
+              <div class="how">Облачно с<br />прояснениями</div>
+            </div>
+          </td>
+          <td>
+            <div class="sixth">
+              <div class="today">Вс</div>
+              <div class="okt">4 ноября</div>
+              <img src="img/1.png" alt="" />
+              <div class="day"><b>+19&deg;</b></div>
+              <div class="night">+9&deg;</div>
+              <div class="how">Облачно с<br />прояснениями</div>
+            </div>
+          </td>
+          <td>
+            <div class="seventh">
+              <div class="today">Пн</div>
+              <div class="okt">5 ноября</div>
+              <img src="img/3.png" alt="" />
+              <div class="day"><b>+18&deg;</b></div>
+              <div class="night">11&deg;</div>
+              <div class="how">Ясно<br /><br /></div>
+            </div>
+          </td>
+          <td>
+            <div class="eighth">
+              <div class="today">Вт</div>
+              <div class="okt">6 ноября</div>
+              <img src="img/2.png" alt="" />
+              <div class="day"><b>+15&deg;</b></div>
+              <div class="night">+12&deg;</div>
+              <div class="how">Пасмурно<br /><br /></div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

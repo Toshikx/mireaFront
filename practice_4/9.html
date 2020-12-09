@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<!-- Объявление формата документа -->
+<html>
+  <head>
+    <!-- Техническая информация о документе -->
+    <meta charset="UTF-8" />
+    <!-- Определяем кодировку символов документа -->
+    <title>Главная</title>
+    <!-- Задаем заголовок документа -->
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <!-- Подключаем внешнюю таблицу стилей -->
+    <script src="script.js"></script>
+    <!-- Подключаем сценарии -->
+    <style>
+      .c-hamburger {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        width: 96px;
+        height: 96px;
+        font-size: 0;
+        text-indent: -9999px;
+        appearance: none;
+        box-shadow: none;
+        border-radius: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .c-hamburger:focus {
+        outline: none;
+      }
+
+      .c-hamburger span {
+        display: block;
+        position: absolute;
+        top: 44px;
+        left: 18px;
+        right: 18px;
+        height: 8px;
+        background: white;
+      }
+
+      .c-hamburger span::before,
+      .c-hamburger span::after {
+        position: absolute;
+        display: block;
+        left: 0;
+        width: 100%;
+        height: 8px;
+        background-color: #fff;
+        content: "";
+      }
+
+      .c-hamburger span::before {
+        top: -20px;
+      }
+
+      .c-hamburger span::after {
+        bottom: -20px;
+      }
+
+      .c-hamburger--rot {
+        box-shadow: inset 0 0 6px;
+        background: linear-gradient(90deg, #cfecd0, #a0cea7, #9ec0db);
+      }
+
+      .c-hamburger--rot span {
+        transition: transform 0.3s;
+      }
+
+      /* состояние active при открытом меню  */
+      .c-hamburger--rot.is-active {
+        background-color: #166888;
+      }
+
+      .c-hamburger--rot.is-active span {
+        transform: rotateX(90deg);
+      }
+
+      .c-hamburger--htx {
+        background-color: #ff3264;
+        box-shadow: inset 0 0 20px;
+      }
+
+      .c-hamburger--htx span {
+        transition: background 0s 0.3s;
+      }
+
+      .c-hamburger--htx span::before,
+      .c-hamburger--htx span::after {
+        transition-duration: 0.3s, 0.3s;
+        transition-delay: 0.3s, 0s;
+      }
+
+      .c-hamburger--htx span::before {
+        transition-property: top, transform;
+      }
+
+      .c-hamburger--htx span::after {
+        transition-property: bottom, transform;
+      }
+
+      /* состояние active при открытом меню  */
+      .c-hamburger--htx.is-active {
+        background: linear-gradient(90deg, #ee5c87, #f1a4b5, #d587b3);
+      }
+
+      .c-hamburger--htx.is-active span {
+        background: none;
+      }
+
+      .c-hamburger--htx.is-active span::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      .c-hamburger--htx.is-active span::after {
+        bottom: 0;
+        transform: rotate(-45deg);
+      }
+
+      .c-hamburger--htx.is-active span::before,
+      .c-hamburger--htx.is-active span::after {
+        transition-delay: 0s, 0.3s;
+      }
+
+      .c-hamburger--htla {
+        background-color: #32dc64;
+        box-shadow: inset 0 0 15px;
+      }
+
+      .c-hamburger--htla span {
+        transition: transform 0.3s;
+      }
+
+      .c-hamburger--htla span::before {
+        transform-origin: top right;
+        transition: transform 0.3s, width 0.3s, top 0.3s;
+      }
+
+      .c-hamburger--htla span::after {
+        transform-origin: bottom right;
+        transition: transform 0.3s, width 0.3s, bottom 0.3s;
+      }
+
+      /* состояние active при открытом меню  */
+      .c-hamburger--htla.is-active {
+        background: linear-gradient(66deg, #e38010, #1535bf);
+      }
+
+      .c-hamburger--htla.is-active span {
+        transform: rotate(180deg);
+      }
+
+      .c-hamburger--htla.is-active span::before,
+      .c-hamburger--htla.is-active span::after {
+        width: 50%;
+      }
+
+      .c-hamburger--htla.is-active span::before {
+        top: 0;
+        transform: translateX(38px) translateY(4px) rotate(45deg);
+      }
+
+      .c-hamburger--htla.is-active span::after {
+        bottom: 0;
+        transform: translateX(38px) translateY(-4px) rotate(-45deg);
+      }
+    </style>
+  </head>
+
+  <body>
+    Сжатие
+    <button class="c-hamburger c-hamburger--rot">
+      <span>Сжатие</span>
+    </button>
+    Крест
+    <button class="c-hamburger c-hamburger--htx">
+      <span>Крест</span>
+    </button>
+    Стрелка
+    <button class="c-hamburger c-hamburger--htla">
+      <span>Стрелка</span>
+    </button>
+
+    <script>
+      (function () {
+        "use strict";
+
+        var toggles = document.querySelectorAll(".c-hamburger");
+
+        for (var i = toggles.length - 1; i >= 0; i--) {
+          var toggle = toggles[i];
+          toggleHandler(toggle);
+        }
+
+        function toggleHandler(toggle) {
+          toggle.addEventListener("click", function (e) {
+            e.preventDefault();
+            this.classList.contains("is-active") === true
+              ? this.classList.remove("is-active")
+              : this.classList.add("is-active");
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
