@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style type="text/css">
+		:root {
+  
+  --fade-time: 0.5s;
+}
+
+body {
+  margin: 20px;
+  padding: 0;
+  background: #333;
+}
+
+.container {
+  max-width: 760px;
+  margin: auto;
+  border: #fff solid 3px;
+  background: #fff;
+}
+
+.main-img img,
+.imgs img {
+  width: 100%;
+}
+
+.imgs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+    width: 100px;
+    height: 100px;
+}
+
+.imgs img {
+  cursor: pointer;
+}
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn var(--fade-time) ease-in 1 forwards;
+}
+
+/* Media Queries */
+@media(max-width: 600px) {
+  .imgs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+	</style>
+</head>
+<body>
+	<div class="container">
+  <div class="main-img">
+    <img src="https://www.nastol.com.ua/download.php?img=201307/1920x1200/nastol.com.ua-53627.jpg" id="current">
+  </div>
+
+  <div class="imgs">
+    <img src="https://www.sunhome.ru/i/wallpapers/87/rai.2560x1600.jpg">
+    <img src="https://fullhdoboi.ru/wp-content/uploads/_ph/6/879396402.jpg">
+    <img src="https://www.sunhome.ru/i/wallpapers/87/zolotoe-nebo.orig.jpg">
+    <img src="https://img-fotki.yandex.ru/get/5814/35517494.27/0_8744c_131551d2_orig.jpg">
+  </div>
+</div>
+ <script type="text/javascript">
+ 	const current = document.querySelector('#current');
+const imgs = document.querySelector('.imgs');
+const img = document.querySelectorAll('.imgs img');
+const opacity = 0.6;
+
+
+img[0].style.opacity = opacity;
+
+imgs.addEventListener('click', imgClick);
+
+function imgClick(e) {
+  
+  img.forEach(img => (img.style.opacity = 1));
+
+  
+  current.src = e.target.src;
+
+  
+  current.classList.add('fade-in');
+
+  
+  setTimeout(() => current.classList.remove('fade-in'), 500);
+
+  
+  e.target.style.opacity = opacity;
+}
+ </script>
+</body>
+</html>

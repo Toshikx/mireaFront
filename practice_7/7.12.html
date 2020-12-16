@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <style>
+    .tree span:hover {
+      font-weight: bold;
+    }
+    .tree span {
+      cursor: pointer;
+    }
+  </style>
+  <meta charset="utf-8">
+</head>
+<body>
+  <ul class="tree" id="tree">
+    <li>Cars
+      <ul>
+        <li>Audi
+          <ul>
+            <li>q7</li>
+            <li>q5</li>
+            <li>a3</li>
+            <li>a5</li>
+          </ul>
+        </li>
+        <li>BMW
+          <ul>
+            <li>i8</li>
+            <li>x5</li>
+            <li>x6</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>Lexus
+      <ul>
+        <li>SUV
+          <ul>
+            <li>lx200</li>
+            <li>Lc200</li>
+          </ul>
+        </li>
+        <li>sedan
+          <ul>
+            <li>cx10</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <script>
+    for (let li of tree.querySelectorAll('li')) {
+      let span = document.createElement('span');
+      li.prepend(span);
+      span.append(span.nextSibling); }
+    tree.onclick = function(event) {
+      if (event.target.tagName != 'SPAN') {
+        return;
+      }
+      let childrenContainer = event.target.parentNode.querySelector('ul');
+      if (!childrenContainer) return; 
+      childrenContainer.hidden = !childrenContainer.hidden;
+    }
+  </script>
+</body>
+</html>

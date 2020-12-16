@@ -1,0 +1,119 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset="utf-8"> 
+<link rel="stylesheet" href="style.css"> 
+    <style>
+    body { 
+padding: 10px; 
+} 
+
+.carousel { 
+position: relative; 
+width: 398px; 
+padding: 10px 40px; 
+border: 1px solid #CCC; 
+border-radius: 15px; 
+background: #eee; 
+} 
+
+.carousel img { 
+width: 130px; 
+height: 130px; 
+display: block; 
+} 
+
+.arrow { 
+position: absolute; 
+top: 60px; 
+padding: 0; 
+background: #ddd; 
+border-radius: 15px; 
+border: 1px solid gray; 
+font-size: 24px; 
+line-height: 24px; 
+color: #444; 
+display: block; 
+} 
+
+.arrow:focus { 
+outline: none; 
+} 
+
+.arrow:hover { 
+background: #ccc; 
+cursor: pointer; 
+} 
+
+.prev { 
+left: 7px; 
+} 
+
+.next { 
+right: 7px; 
+} 
+
+.gallery { 
+width: 390px; 
+overflow: hidden; 
+} 
+
+.gallery ul { 
+height: 130px; 
+width: 9999px; 
+margin: 0; 
+padding: 0; 
+list-style: none; 
+transition: margin-left 250ms; 
+font-size: 0; 
+} 
+
+.gallery li { 
+display: inline-block; 
+}
+    </style>
+</head> 
+
+<body> 
+
+<div id="carousel" class="carousel"> 
+<button class="arrow prev">⇦</button> 
+<div class="gallery"> 
+<ul class="images"> 
+<li><img src="C:\Users\flyac\Desktop\работы саши\autodealer\images/1.jpg"></li> 
+<li><img src="C:\Users\flyac\Desktop\работы саши\autodealer\images/2.jpg"></li> 
+<li><img src="C:\Users\flyac\Desktop\работы саши\autodealer\images/3.jpg"></li> 
+<li><img src="C:\Users\flyac\Desktop\работы саши\autodealer\images/4.jpg"></li> 
+<li><img src="C:\Users\flyac\Desktop\работы саши\autodealer\images/5.jpg"></li> 
+<li><img src="C:\Users\flyac\Desktop\работы саши\autodealer\images/6.jpg"></li> 
+<li><img src="C:\Users\flyac\Desktop\работы саши\autodealer\images/7.jpg"></li> 
+<li><img src="C:\Users\flyac\Desktop\работы саши\autodealer\images/8.jpg"></li> 
+</ul> 
+</div> 
+<button class="arrow next">⇨</button> 
+</div> 
+<script> 
+let i = 1; 
+for(let li of carousel.querySelectorAll('li')) { 
+li.style.position = 'relative'; 
+li.insertAdjacentHTML('beforeend', `<span style="position:absolute;left:0;top:0">${i}</span>`); 
+i++; 
+} 
+let width = 130; 
+let count = 3; 
+let list = carousel.querySelector('ul'); 
+let listElems = carousel.querySelectorAll('li'); 
+let position = 0; 
+carousel.querySelector('.prev').onclick = function() { 
+position += width * count; 
+position = Math.min(position, 0) 
+list.style.marginLeft = position + 'px'; 
+}; 
+carousel.querySelector('.next').onclick = function() { 
+position -= width * count; 
+position = Math.max(position, -width * (listElems.length - count)); 
+list.style.marginLeft = position + 'px'; 
+}; 
+</script> 
+</body>
+</html>
